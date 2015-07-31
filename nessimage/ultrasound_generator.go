@@ -28,6 +28,7 @@ func DrawPicture(src image.Image, width int, height int) *image.Gray {
 				c = outsideColor(rander)
 			}
 			x1, y1 := transformCurve(x, y, width, height)
+			//c = color.Gray{c.Y + ScaledLuminanceAt(90, src, x, y)}
 			img.Set(x1, y1, c)
 		}
 	}
@@ -40,7 +41,7 @@ func DrawPicture(src image.Image, width int, height int) *image.Gray {
 }
 
 var minRadius = 10.0
-var maxRadius = 800.0
+var maxRadius = 1400.0
 var angle = math.Pi / 3
 
 func transformCurve(x int, y int, width int, height int) (int, int) {
